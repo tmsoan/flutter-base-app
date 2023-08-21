@@ -1,0 +1,33 @@
+name: data
+description: A new Flutter module project.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  domain:
+    path: ../domain
+  shared:
+    path: ../shared
+  dio: ^5.3.2
+  retrofit: ^4.0.1
+  built_value: ^8.6.1
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  retrofit_generator: ^7.0.8
+  build_runner: ^2.4.6
+  json_serializable: ^6.7.1
+  built_value_generator: ^8.6.1
+
+flutter:
+  module:
+    androidX: true
+    androidPackage: com.base.data.data
+    iosBundleIdentifier: com.base.data.data

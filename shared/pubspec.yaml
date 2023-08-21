@@ -1,7 +1,6 @@
-name: flutter_base_app
-description: A new Flutter project.
+name: shared
+description: A new Flutter module project.
 version: 1.0.0+1
-publish_to: none
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
@@ -9,26 +8,19 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  shared:
-    path: ./shared
-  domain:
-    path: ./domain
-  resources:
-    path: ./resources
-
+  logger: ^2.0.1
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
   flutter_lints: ^2.0.0
 
-# The following section is specific to Flutter packages.
 flutter:
   uses-material-design: true
 
-  # To add assets to your application, add an assets section, like this:
+  # To add Flutter specific assets to your application, add an assets section,
+  # like this:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
@@ -39,9 +31,9 @@ flutter:
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
 
-  # To add custom fonts to your application, add a fonts section here,
-  # in this "flutter" section. Each entry in this list should have a
-  # "family" key with the font family name, and a "fonts" key with a
+  # To add Flutter specific custom fonts to your application, add a fonts
+  # section here, in this "flutter" section. Each entry in this list should
+  # have a "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
   # fonts:
@@ -58,3 +50,15 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
+  # This section identifies your Flutter project as a module meant for
+  # embedding in a native host app.  These identifiers should _not_ ordinarily
+  # be changed after generation - they are used to ensure that the tooling can
+  # maintain consistency when adding or modifying assets and plugins.
+  # They also do not have any bearing on your native host application's
+  # identifiers, which may be completely independent or the same as these.
+  module:
+    androidX: true
+    androidPackage: com.base.shared.shared
+    iosBundleIdentifier: com.base.shared.shared
