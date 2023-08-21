@@ -29,4 +29,10 @@ class RepositoryImpl implements Repository {
     kEZLogger.e('`data layer` API calling...');
     _restClient.getTasks().then((value) => kEZLogger.d(value));
   }
+
+  @override
+  Future<List<TaskData>> getTasks() async {
+    kEZLogger.e('`data layer` API calling...');
+    return await _restClient.getTasks();
+  }
 }

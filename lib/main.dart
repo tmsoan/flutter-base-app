@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_base_app/ui/splash/splash_screen.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 
 import 'app_session.dart';
 import 'ui/app_routes.dart';
@@ -34,8 +36,9 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      builder: EasyLoading.init(),
       onGenerateRoute: AppRoute.generateAppRoute,
-      home: const HomeScreen(),
+      home: const SplashScreen(),
     );
   }
 }

@@ -10,7 +10,7 @@ class AppRoute {
     switch (settings.name) {
       case homeScreen:
         return _BaseTransitionPageRoute(
-            builder: (_) => const HomeScreen(),
+            builder: (context) => HomeScreen.provider(context),
             settings: settings
         );
       default:

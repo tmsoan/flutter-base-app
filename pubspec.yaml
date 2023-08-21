@@ -15,7 +15,8 @@ dependencies:
     path: ./domain
   resources:
     path: ./resources
-
+  flutter_bloc: ^8.1.3
+  flutter_easyloading: ^3.0.5
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
