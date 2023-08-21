@@ -1,6 +1,6 @@
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
-import '../../data.dart';
+import '../model/task_data.dart';
 
 part 'rest_client.g.dart';
 
@@ -13,5 +13,5 @@ abstract class RestClient {
   factory RestClient(Dio dio, {String baseUrl}) = _RestClient;
 
   @GET(APIs.tasks)
-  Future<TaskEntity> getTasks();
+  Future<List<TaskData>> getTasks();
 }

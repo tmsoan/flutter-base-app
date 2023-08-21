@@ -1,12 +1,14 @@
 
+import 'package:domain/domain.dart';
 import 'package:shared/shared.dart';
 import 'package:data/data.dart';
 
 class LoginInteractor {
+  final Repository _repository = RepositoryImpl();
 
   void testLogin() {
     kEZLogger.i('LoginInteractor >>> testLogin()');
     kEZLogger.i('Then call `data layer`');
-    RepositoryImpl().login("email-soan", "password-123456");
+    _repository.login("email-soan", "password-123456");
   }
 }

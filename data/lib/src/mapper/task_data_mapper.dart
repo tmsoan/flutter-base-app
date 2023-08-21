@@ -1,12 +1,13 @@
 
 import 'package:domain/domain.dart';
 import '../../data.dart';
+import '../model/task_data.dart';
 
 
-class TaskDataMapper extends BaseDataMapper<TaskEntity, Task> with DataMapperMixin {
+class TaskDataMapper extends BaseDataMapper<TaskData, Task> with DataMapperMixin {
 
   @override
-  Task mapToEntity(TaskEntity? data) {
+  Task mapToEntity(TaskData? data) {
     return Task(
       id: data?.id,
       name: data?.name,
@@ -16,8 +17,8 @@ class TaskDataMapper extends BaseDataMapper<TaskEntity, Task> with DataMapperMix
   }
 
   @override
-  TaskEntity mapToData(Task entity) {
-    return TaskEntity(
+  TaskData mapToData(Task entity) {
+    return TaskData(
       id: entity.id,
       name: entity.name,
       avatar: entity.avatar,
