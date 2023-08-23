@@ -1,13 +1,26 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:flutter_base_app/config/app_config.dart';
 import 'package:flutter_base_app/ui/splash/splash_screen.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+import 'package:initializer/initializer.dart';
+import 'package:shared/shared.dart';
 
 import 'app_session.dart';
 import 'ui/app_routes.dart';
 import 'ui/home/home_screen.dart';
 
-void main() {
+void main() => runZonedGuarded(_runMyApp, _reportError);
+
+Future<void> _runMyApp() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AppInitializer(AppConfig.getInstance()).init();
   runApp(const MyApp());
+}
+
+void _reportError(Object error, StackTrace stackTrace) {
+  kEZLogger.e(error, stackTrace: stackTrace, error: 'Uncaught exception');
 }
 
 class MyApp extends StatefulWidget {

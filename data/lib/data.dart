@@ -8,3 +8,4 @@ export 'src/mapper/base/base_data_mapper.dart';
 export 'src/mapper/task_data_mapper.dart';
 export 'src/network/rest_client.dart';
 export 'src/repository/repository_impl.dart';
+export 'src/config/data_config.dart';

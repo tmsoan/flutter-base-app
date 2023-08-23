@@ -3,12 +3,13 @@ import 'package:domain/domain.dart';
 import 'package:flutter_base_app/ui/home/bloc/home_event.dart';
 import 'package:flutter_base_app/ui/home/bloc/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:get_it/get_it.dart';
 import '../../../base/bloc/base_bloc.dart';
 
 class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
-  final FetchTasksIntractor _fetchTasksIntractor;
+  final FetchTasksIntractor _fetchTasksIntractor = GetIt.I<FetchTasksIntractor>();
 
-  HomeBloc(this._fetchTasksIntractor) : super(HomeState()) {
+  HomeBloc() : super(HomeState()) {
     on<HomeFetchingEvent>(_onFetchingTasks);
     on<HomePullToRefreshEvent>(_onPullToRefreshTasks);
   }

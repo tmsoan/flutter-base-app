@@ -1,10 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:domain/domain.dart';
+import 'package:injectable/injectable.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:shared/shared.dart';
 
 import '../../data.dart';
 
+@singleton
+@injectable
 class RepositoryImpl implements Repository {
 
   Dio _buildDioClient() {

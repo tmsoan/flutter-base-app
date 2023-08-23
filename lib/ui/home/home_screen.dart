@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
   static provider(BuildContext context) {
     return BlocProvider(
-      create: (context) => HomeBloc(FetchTasksIntractor()),
+      create: (context) => HomeBloc(),
       child: const HomeScreen(key: Key("HomeScreen"),),
     );
   }

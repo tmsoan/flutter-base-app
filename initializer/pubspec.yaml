@@ -1,0 +1,31 @@
+name: initializer
+description: A new Flutter module project.
+version: 1.0.0+1
+publish_to: none
+
+environment:
+  sdk: '>=3.0.6 <4.0.0'
+
+dependency_overrides:
+  analyzer: 5.13.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  data:
+    path: ../data
+  domain:
+    path: ../domain
+  shared:
+    path: ../shared
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  module:
+    androidX: true
+    androidPackage: com.base.initialier.initializer
+    iosBundleIdentifier: com.base.initialier.initializer
