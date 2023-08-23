@@ -11,6 +11,6 @@ class FetchTasksIntractor {
 
   Future<List<Task>> getTasks() async {
     final tasksData = await _repository.getTasks();
-    return GetIt.I<TaskDataMapper>().mapToEntities(tasksData);
+    return TaskDataMapper().mapToEntities(tasksData);
   }
 }

@@ -1,9 +1,7 @@
 
 import 'package:domain/domain.dart';
-import 'package:injectable/injectable.dart';
 import '../../data.dart';
 
-@injectable
 class TaskDataMapper extends BaseDataMapper<TaskData, Task> with DataMapperMixin {
 
   @override

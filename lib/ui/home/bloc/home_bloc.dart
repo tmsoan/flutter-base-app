@@ -3,13 +3,14 @@ import 'package:domain/domain.dart';
 import 'package:flutter_base_app/ui/home/bloc/home_event.dart';
 import 'package:flutter_base_app/ui/home/bloc/home_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get_it/get_it.dart';
+import 'package:injectable/injectable.dart';
 import '../../../base/bloc/base_bloc.dart';
 
+@injectable
 class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
-  final FetchTasksIntractor _fetchTasksIntractor = GetIt.I<FetchTasksIntractor>();
+  final FetchTasksIntractor _fetchTasksIntractor;
 
-  HomeBloc() : super(HomeState()) {
+  HomeBloc(this._fetchTasksIntractor) : super(HomeInitialState()) {
     on<HomeFetchingEvent>(_onFetchingTasks);
     on<HomePullToRefreshEvent>(_onPullToRefreshTasks);
   }
@@ -28,8 +29,8 @@ class HomeBloc extends BaseBloc<HomeEvent, HomeState> {
     Future<void> Function()? doOnSubscribe,
     Future<void> Function()? doOnSuccessOrError,
   }) async {
-    emit(HomeState(isLoading: isInitialLoad));
+    emit(HomeLoadingState(true));
     final taskList = await _fetchTasksIntractor.getTasks();
-    emit(HomeState(tasks: taskList));
+    emit(HomeLoadedState(taskList));
   }
 }
