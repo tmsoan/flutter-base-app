@@ -21,9 +21,7 @@ Flutter project using clean architecture and bloc pattern.
 - cd to root project folder
 - run `flutter pub get`
 
-- Run the app `flutter run -d web | windows`
-    - on macOS: only can run on web
-    - on Windows: can run on web or desktop app
+- Run the app ...
 
 ### Build and setup
 ...
